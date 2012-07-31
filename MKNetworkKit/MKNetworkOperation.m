@@ -92,6 +92,8 @@
 
 @synthesize connection = _connection;
 
+@synthesize rawData;
+
 @synthesize request = _request;
 @synthesize response = _response;
 
@@ -709,13 +711,16 @@
 }
 
 -(NSData*) bodyData {
-  
-  if([self.filesToBePosted count] == 0 && [self.dataToBePosted count] == 0) {
     
-    return [[self encodedPostDataString] dataUsingEncoding:self.stringEncoding];
-  }
-  
-  NSString *boundary = @"0xKhTmLbOuNdArY";
+    if(self.rawData!=nil){
+        return self.rawData;
+    }
+    if([self.filesToBePosted count] == 0 && [self.dataToBePosted count] == 0) {
+        
+        return [[self encodedPostDataString] dataUsingEncoding:self.stringEncoding];
+    }
+    
+    NSString *boundary = @"0xKhTmLbOuNdArY";
   NSMutableData *body = [NSMutableData data];
   __block NSUInteger postLength = 0;    
   
@@ -823,9 +828,12 @@
   
   if(!self.isCancelled) {
     
-    if ([self.request.HTTPMethod isEqualToString:@"POST"] || [self.request.HTTPMethod isEqualToString:@"PUT"] || [self.request.HTTPMethod isEqualToString:@"PATCH"]) {            
       
-      [self.request setHTTPBody:[self bodyData]];
+    if ([self.request.HTTPMethod isEqualToString:@"POST"] || [self.request.HTTPMethod isEqualToString:@"PUT"] || [self.request.HTTPMethod isEqualToString:@"PATCH"]) {
+        if(self.request.HTTPBody==nil)
+        {
+            [self.request setHTTPBody:[self bodyData]];
+        }
     }
     
     dispatch_async(dispatch_get_main_queue(), ^{
