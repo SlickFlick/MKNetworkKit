@@ -75,6 +75,9 @@ typedef enum {
   MKNKPostDataEncodingType _postDataEncoding;
 }
 
+//wf: access  post body data
+-(NSData*) bodyData;
+
 /*!
  *  @abstract Request URL Property
  *  @property url
