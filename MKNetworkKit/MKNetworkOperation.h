@@ -99,7 +99,7 @@ typedef enum {
  *  To create an operation with a new request, use the operationWithURLString:params:httpMethod: 
  */
 
-@property (nonatomic) NSData* rawData;
+@property (nonatomic,strong) NSData* rawData;
 
 @property (nonatomic, strong, readonly) NSURLRequest *readonlyRequest;
 
