@@ -167,6 +167,9 @@ typedef enum {
  *  setCustomPostDataEncodingHandler:forType:
  *
  */
+
+-(NSDictionary*) HTTPResponseHeaders;
+
 @property (nonatomic, assign) MKNKPostDataEncodingType postDataEncoding;
 
 /*!
@@ -550,4 +553,5 @@ typedef enum {
 - (id)initWithURLString:(NSString *)aURLString
                  params:(NSMutableDictionary *)params
              httpMethod:(NSString *)method;
+
 @end

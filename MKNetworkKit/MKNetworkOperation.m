@@ -1302,4 +1302,9 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite {
   
 }
 
+-(NSDictionary*) HTTPResponseHeaders
+{
+    return [self.response allHeaderFields];
+}
+
 @end
