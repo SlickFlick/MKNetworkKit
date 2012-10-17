@@ -21,10 +21,11 @@
         NSNumber* dateNr = (NSNumber*)value_;
         NSTimeInterval _interval=[dateNr intValue];
         NSDate* sourceDate = [NSDate dateWithTimeIntervalSince1970:_interval];
-        NSTimeZone* destinationTimeZone = [NSTimeZone systemTimeZone];
-        NSInteger destinationGMTOffset = [destinationTimeZone secondsFromGMTForDate:sourceDate];
-        NSTimeInterval interval = destinationGMTOffset;
-        NSDate* date = [[NSDate alloc] initWithTimeInterval:interval sinceDate:sourceDate];
+//        NSTimeZone* destinationTimeZone = [NSTimeZone systemTimeZone];
+//        NSInteger destinationGMTOffset = [destinationTimeZone secondsFromGMTForDate:sourceDate];
+//        NSTimeInterval interval = destinationGMTOffset;
+//        NSDate* date = [[NSDate alloc] initWithTimeInterval:interval sinceDate:sourceDate];
+        NSDate* date = sourceDate;
         
         return date;
     }
