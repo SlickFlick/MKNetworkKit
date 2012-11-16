@@ -744,8 +744,17 @@
                                  [[thisFile objectForKey:@"filepath"] lastPathComponent], 
                                  [thisFile objectForKey:@"mimetype"]];
     
-    [body appendData:[thisFieldString dataUsingEncoding:[self stringEncoding]]];         
-    [body appendData: [NSData dataWithContentsOfFile:[thisFile objectForKey:@"filepath"]]];
+    [body appendData:[thisFieldString dataUsingEncoding:[self stringEncoding]]];
+      NSData* data = nil;
+      if([[thisFile objectForKey:@"name"] isEqualToString:@"originalImage"] == NO)
+      {
+          data = [NSData dataWithContentsOfFile:[thisFile objectForKey:@"filepath"]];
+      }
+      else
+      {
+          data = UIImageJPEGRepresentation([UIImage imageWithContentsOfFile:[thisFile objectForKey:@"filepath"]], 0.5);
+      }
+    [body appendData: data];
     [body appendData:[@"\r\n" dataUsingEncoding:[self stringEncoding]]];
   }];
   
