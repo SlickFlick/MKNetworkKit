@@ -23,12 +23,12 @@
 
 #import <Foundation/Foundation.h>
 
-void *NewBase64Decode(
+void *_NewBase64Decode(
 	const char *inputBuffer,
 	size_t length,
 	size_t *outputLength);
 
-char *NewBase64Encode(
+char *_NewBase64Encode(
 	const void *inputBuffer,
 	size_t length,
 	bool separateLines,

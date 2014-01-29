@@ -990,6 +990,7 @@
         
         [challenge.sender useCredential:[NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust] forAuthenticationChallenge:challenge];
       }
+#ifdef kSecTrustResultConfirm
       else if(result == kSecTrustResultConfirm) {
         
         // ask user
@@ -1003,7 +1004,8 @@
           // Cert not trusted, and user is not OK with that. Don't proceed
           [challenge.sender continueWithoutCredentialForAuthenticationChallenge:challenge];
         }
-      } 
+      }
+#endif
       else {
         
         // invalid or revoked certificate
@@ -1031,7 +1033,7 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
   
-  NSUInteger size = [self.response expectedContentLength] < 0 ? 0 : [self.response expectedContentLength];
+  long long size = [self.response expectedContentLength] < 0 ? 0 : [self.response expectedContentLength];
   self.response = (NSHTTPURLResponse*) response;
   
   // dont' save data if the operation was created to download directly to a stream.

@@ -26,8 +26,8 @@
 		ABB5C2C5148B3B360056D3E9 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB5C2B7148B3B360056D3E9 /* Reachability.m */; };
 		ABB5C2CD148B40910056D3E9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABB5C2CB148B40910056D3E9 /* SystemConfiguration.framework */; };
 		ABB5C2CE148B40910056D3E9 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABB5C2CC148B40910056D3E9 /* CFNetwork.framework */; };
-		ABDC97461498A6DE0034CEBE /* NSData+Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = ABDC97441498A6DE0034CEBE /* NSData+Base64.h */; };
-		ABDC97471498A6DE0034CEBE /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDC97451498A6DE0034CEBE /* NSData+Base64.m */; };
+		C48985DD189938230004C9A6 /* NSData+Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = C48985DB189938230004C9A6 /* NSData+Base64.h */; };
+		C48985DE189938230004C9A6 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = C48985DC189938230004C9A6 /* NSData+Base64.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,8 +52,8 @@
 		ABB5C2B7148B3B360056D3E9 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		ABB5C2CB148B40910056D3E9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		ABB5C2CC148B40910056D3E9 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		ABDC97441498A6DE0034CEBE /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
-		ABDC97451498A6DE0034CEBE /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		C48985DB189938230004C9A6 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		C48985DC189938230004C9A6 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,10 +125,10 @@
 		ABB5C2A9148B3B360056D3E9 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				C48985DB189938230004C9A6 /* NSData+Base64.h */,
+				C48985DC189938230004C9A6 /* NSData+Base64.m */,
 				AB3A3096148F0A3B00D06246 /* NSDate+RFC1123.h */,
 				AB3A3097148F0A3B00D06246 /* NSDate+RFC1123.m */,
-				ABDC97441498A6DE0034CEBE /* NSData+Base64.h */,
-				ABDC97451498A6DE0034CEBE /* NSData+Base64.m */,
 				ABB5C2AA148B3B360056D3E9 /* NSDictionary+RequestEncoding.h */,
 				ABB5C2AB148B3B360056D3E9 /* NSDictionary+RequestEncoding.m */,
 				ABB5C2AC148B3B360056D3E9 /* NSString+MKNetworkKitAdditions.h */,
@@ -173,7 +173,7 @@
 				ABB5C2C2148B3B360056D3E9 /* MKNetworkOperation.h in Headers */,
 				ABB5C2C4148B3B360056D3E9 /* Reachability.h in Headers */,
 				AB3A3098148F0A3B00D06246 /* NSDate+RFC1123.h in Headers */,
-				ABDC97461498A6DE0034CEBE /* NSData+Base64.h in Headers */,
+				C48985DD189938230004C9A6 /* NSData+Base64.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,7 +203,7 @@
 		ABB5C253148B3AE00056D3E9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Steinlogic;
 			};
 			buildConfigurationList = ABB5C256148B3AE00056D3E9 /* Build configuration list for PBXProject "MKNetworkKit-iOS" */;
@@ -233,9 +233,9 @@
 				ABB5C2BE148B3B360056D3E9 /* UIAlertView+MKNetworkKitAdditions.m in Sources */,
 				ABB5C2C0148B3B360056D3E9 /* MKNetworkEngine.m in Sources */,
 				ABB5C2C3148B3B360056D3E9 /* MKNetworkOperation.m in Sources */,
+				C48985DE189938230004C9A6 /* NSData+Base64.m in Sources */,
 				ABB5C2C5148B3B360056D3E9 /* Reachability.m in Sources */,
 				AB3A3099148F0A3B00D06246 /* NSDate+RFC1123.m in Sources */,
-				ABDC97471498A6DE0034CEBE /* NSData+Base64.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,9 +246,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -262,11 +263,15 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -275,18 +280,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
