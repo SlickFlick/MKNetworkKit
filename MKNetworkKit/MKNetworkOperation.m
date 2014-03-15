@@ -774,7 +774,7 @@
   }];
   
   if (postLength >= 1)
-    [self.request setValue:[NSString stringWithFormat:@"%u", postLength] forHTTPHeaderField:@"content-length"];
+    [self.request setValue:[NSString stringWithFormat:@"%ld", (long)postLength] forHTTPHeaderField:@"content-length"];
   
   [body appendData: [[NSString stringWithFormat:@"--%@--\r\n", boundary] dataUsingEncoding:self.stringEncoding]];
   
@@ -784,7 +784,7 @@
     [self.request setValue:[NSString stringWithFormat:@"multipart/form-data; charset=%@; boundary=%@", charset, boundary] 
         forHTTPHeaderField:@"Content-Type"];
     
-    [self.request setValue:[NSString stringWithFormat:@"%d", [body length]] forHTTPHeaderField:@"Content-Length"];
+    [self.request setValue:[NSString stringWithFormat:@"%ld", (long)[body length]] forHTTPHeaderField:@"Content-Length"];
   }
   
   return body;
@@ -1038,7 +1038,7 @@
   
   // dont' save data if the operation was created to download directly to a stream.
   if([self.downloadStreams count] == 0)
-    self.mutableData = [NSMutableData dataWithCapacity:size];
+    self.mutableData = [NSMutableData dataWithCapacity:(NSInteger)size];
   else
     self.mutableData = nil;
   

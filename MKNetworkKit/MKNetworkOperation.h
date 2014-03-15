@@ -44,13 +44,13 @@ typedef void (^MKNKAuthBlock)(NSURLAuthenticationChallenge* challenge);
 
 typedef NSString* (^MKNKEncodingBlock) (NSDictionary* postDataDict);
 
-typedef enum {
-  
-  MKNKPostDataEncodingTypeURL = 0, // default
-  MKNKPostDataEncodingTypeJSON,
-  MKNKPostDataEncodingTypePlist,
-  MKNKPostDataEncodingTypeCustom
-} MKNKPostDataEncodingType;
+typedef NS_ENUM(NSInteger,MKNKPostDataEncodingType){
+    MKNKPostDataEncodingTypeURL = 0, // default
+    MKNKPostDataEncodingTypeJSON,
+    MKNKPostDataEncodingTypePlist,
+    MKNKPostDataEncodingTypeCustom
+};
+
 /*!
  @header MKNetworkOperation.h
  @abstract   Represents a single unique network operation.
