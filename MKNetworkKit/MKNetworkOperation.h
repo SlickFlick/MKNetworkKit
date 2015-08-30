@@ -81,6 +81,7 @@ typedef NS_ENUM(NSInteger,MKNKPostDataEncodingType){
 //wf: access  post body data
 -(NSData*) bodyData;
 
+@property (nonatomic, strong) NSString* identifier;
 /*!
  *  @abstract Request URL Property
  *  @property url

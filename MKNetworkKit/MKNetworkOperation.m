@@ -627,6 +627,8 @@ OSStatus extractIdentityAndTrust(CFDataRef inPKCS12Data,
     self.uploadProgressChangedHandlers = [NSMutableArray array];
     self.downloadProgressChangedHandlers = [NSMutableArray array];
     self.downloadStreams = [NSMutableArray array];
+      
+    self.identifier = [NSString stringWithFormat:@"%zd", arc4random()%999999999];
     
     self.credentialPersistence = NSURLCredentialPersistenceForSession;
     

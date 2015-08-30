@@ -510,7 +510,8 @@ static NSOperationQueue *_sharedNetworkQueue;
       
     } else {
       
-      [_sharedNetworkQueue addOperation:operation];
+        [_sharedNetworkQueue addOperation:operation];
+        
     }
     
     if([self.reachability currentReachabilityStatus] == NotReachable)
